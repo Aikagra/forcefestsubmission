@@ -10,15 +10,15 @@ import android.webkit.WebViewClient;
 
 public class News extends AppCompatActivity {
 
+    WebView webView;
     Activity activity;
     View view;
-
     protected View onCreate(Activity activity) {
         this.activity = activity;
         LayoutInflater li = activity.getLayoutInflater();
         view = li.inflate(R.layout.activity_news, null);
 
-        WebView webView = findViewById(R.id.wbVw_NEWS);
+        webView = (WebView) view.findViewById(R.id.wbVw_NEWS);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("https://economictimes.indiatimes.com/topic/war");
 

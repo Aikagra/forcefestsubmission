@@ -139,7 +139,7 @@ public class SignUp extends AppCompatActivity {
                                 mUser = mAuth.getCurrentUser();
                                 DatabaseReference databasereference = databaseReference.child(mUser.getUid());
                                 databasereference.setValue(setVal);
-                                startActivity(new Intent(SignUp.this, MainActivity.class));
+                                startActivity(new Intent(SignUp.this, LandingPage.class));
                             } else {
                                 Toast.makeText(SignUp.this, "Couldn't Successfully Create an Account. Error: " + task.getException(), Toast.LENGTH_LONG).show();
                             }
@@ -158,26 +158,42 @@ public class SignUp extends AppCompatActivity {
         startActivity(intent);
     }
     public static class SetVal {
+        public String getAadharNo() {
+            return AadharNo;
+        }
+
+        public void setAadharNo(String aadharNo) {
+            AadharNo = aadharNo;
+        }
+
+        public String getAddress() {
+            return Address;
+        }
+
+        public void setAddress(String address) {
+            Address = address;
+        }
+
+        public String getContactNo() {
+            return ContactNo;
+        }
+
+        public void setContactNo(String contactNo) {
+            ContactNo = contactNo;
+        }
+
+        public String getPinCode() {
+            return PinCode;
+        }
+
+        public void setPinCode(String pinCode) {
+            PinCode = pinCode;
+        }
+
         private String AadharNo;
         private String Address;
         private String ContactNo;
         private String PinCode;
-
-        public void setAadharNo(String AadharNo) {
-            this.AadharNo = AadharNo;
-        }
-
-        public void setAddress(String Address) {
-            this.Address = Address;
-        }
-
-        public void setContactNo(String ContactNo) {
-            this.ContactNo = ContactNo;
-        }
-
-        public void setPinCode(String PinCode) {
-            this.PinCode = PinCode;
-        }
         public SetVal() {
 
         }

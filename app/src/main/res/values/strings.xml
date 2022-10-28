@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">आपात मित्र</string>
 
-    <string-array name="strngrry">
+    <array name="strngrry">
         <item>Vegetarian</item>
         <item>Non-Vegetarian</item>
         <item>Vegan</item>
-    </string-array>
+    </array>
 </resources>

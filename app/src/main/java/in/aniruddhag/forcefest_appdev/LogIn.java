@@ -92,7 +92,7 @@ public class LogIn extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(LogIn.this, "Successfully Signed In.", Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(LogIn.this, MainActivity.class));
+                                startActivity(new Intent(LogIn.this, LandingPage.class));
                             } else {
                                 Toast.makeText(LogIn.this, "Couldn't Successfully SignIn. Error: " + task.getException(), Toast.LENGTH_LONG).show();
                             }

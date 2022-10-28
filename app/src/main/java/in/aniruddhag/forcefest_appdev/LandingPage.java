@@ -30,7 +30,7 @@ public class LandingPage extends AppCompatActivity implements BottomNavigationVi
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int iItemId = (Integer) item.getItemId();
-        bottomNavigationView.setSelectedItemId(iItemId);
+//        bottomNavigationView.setSelectedItemId(iItemId);
 
         switch (iItemId) {
             case R.id.NB_Home:

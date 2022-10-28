@@ -14,7 +14,7 @@ public class Alert extends AppCompatActivity {
     protected View onCreate(Activity activity) {
         this.activity = activity;
         LayoutInflater li = activity.getLayoutInflater();
-        view = li.inflate(R.layout.activity_home, null);
+        view = li.inflate(R.layout.activity_alert, null);
 
         return view;
     }
