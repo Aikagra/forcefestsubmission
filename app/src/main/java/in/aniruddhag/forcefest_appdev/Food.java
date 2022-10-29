@@ -18,6 +18,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class Food extends AppCompatActivity {
     public FirebaseAuth mAuth;
     public FirebaseDatabase mDatabase;
@@ -37,8 +40,8 @@ public class Food extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-        mDatabase = FirebaseDatabase.getInstance("https://forcefest-78f93-default-rtdb.asia-southeast1.firebasedatabase.app/");
-        databaseReference = mDatabase.getReference().child(mUser.getUid()).child("Food");
+        mDatabase = FirebaseDatabase.getInstance("https://forcefest-78f93-default-rtdb.asia-southeast1.firebasedatabase.app");
+        databaseReference = mDatabase.getReference();
 
         spnnr_fd_vg_nnvg = (Spinner) view.findViewById(R.id.spnnr_fd_vg_nnvg);
         btn_OF = (Button) view.findViewById(R.id.btn_OF);
@@ -47,7 +50,7 @@ public class Food extends AppCompatActivity {
         ET_N_f_dlts = (EditText) view.findViewById(R.id.ET_N_f_dlts);
         TV_fd_succss = (TextView) view.findViewById(R.id.TV_fd_succss);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(activity.getApplicationContext(), R.array.strngrry, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(activity.getApplicationContext(), R.array.strngrry, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnnr_fd_vg_nnvg.setAdapter(adapter);
 
@@ -55,19 +58,23 @@ public class Food extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String sAllergies = ET_fd_llrgy.getText().toString();
-                Boolean bVeg = spnnr_fd_vg_nnvg.getSelectedItem() == "Vegetarian";
+                String sFoodType = spnnr_fd_vg_nnvg.getSelectedItem().toString();
                 String sN_f_Chldrn = ET_N_f_Chldrn.getText().toString();
                 String sN_f_dlts = ET_N_f_dlts.getText().toString();
-                if (!databaseReference.child("allergies").setValue(sAllergies).addOnCompleteListener(task -> {})
+                String sCurrentTime = Calendar.getInstance().getTime().toString();
+                if (!databaseReference.child(mUser.getUid()).child("Food").child("Allergies").setValue(sAllergies).addOnCompleteListener(task -> {})
                         .isSuccessful()) {
-                    if (!databaseReference.child("veg").setValue(bVeg).addOnCompleteListener(task1 -> {})
+                    if (!databaseReference.child(mUser.getUid()).child("Food").child("Veg").setValue(sFoodType).addOnCompleteListener(task1 -> {})
                             .isSuccessful()) {
-                        if (!databaseReference.child("N_f_Chldrn").setValue(sN_f_Chldrn).addOnCompleteListener(task1 -> {})
+                        if (!databaseReference.child(mUser.getUid()).child("Food").child("N_f_Chldrn").setValue(sN_f_Chldrn).addOnCompleteListener(task1 -> {})
                                 .isSuccessful()) {
-                            if (!databaseReference.child("N_f_dlts").setValue(sN_f_dlts).addOnCompleteListener(task1 -> {})
+                            if (!databaseReference.child(mUser.getUid()).child("Food").child("N_f_dlts").setValue(sN_f_dlts).addOnCompleteListener(task1 -> {})
                                     .isSuccessful()) {
-                                TV_fd_succss.setText("Your Order was successfully placed!");
-                                TV_fd_succss.setTextColor(Color.rgb(132, 255, 86));
+                                if (!databaseReference.child(mUser.getUid()).child("Food").child("Time").setValue(sCurrentTime).addOnCompleteListener(task1 -> {})
+                                        .isSuccessful()) {
+                                    TV_fd_succss.setText("Your Order was successfully placed!");
+                                    TV_fd_succss.setTextColor(Color.rgb(132, 255, 86));
+                                }else Unsuccessful();
                             } else Unsuccessful();
                         }else Unsuccessful();
                     } else Unsuccessful();
