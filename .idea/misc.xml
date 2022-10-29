@@ -5,12 +5,12 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_alert.xml" value="0.155" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.155" />
-        <entry key="app/src/main/res/layout/activity_alert.xml" value="0.2671875" />
+        <entry key="app/src/main/res/layout/activity_alert.xml" value="0.546772068511199" />
         <entry key="app/src/main/res/layout/activity_food.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_landing_page.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2462962962962963" />
-        <entry key="app/src/main/res/layout/activity_medicine.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_medicine.xml" value="0.2904556274414063" />
         <entry key="app/src/main/res/layout/activity_news.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_report.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.253125" />

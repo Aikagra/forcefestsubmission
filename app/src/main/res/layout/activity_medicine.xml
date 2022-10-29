@@ -6,5 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".Medicine">
 
-
+<!--    <EditText-->
+<!--        android:id="@+id/ET_EYPMN"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="250dp"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:hint="Enter Suffering Symptoms"/>-->
 </RelativeLayout>
