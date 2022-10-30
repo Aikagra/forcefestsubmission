@@ -30,8 +30,6 @@ public class Alert extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance("https://forcefest-78f93-default-rtdb.asia-southeast1.firebasedatabase.app");
         databaseReference = mDatabase.getReference();
 
-
-
         return view;
     }
 }
