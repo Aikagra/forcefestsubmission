@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "489394582563",
+    "firebase_url": "https://forcefest-78f93-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "forcefest-78f93",
+    "storage_bucket": "forcefest-78f93.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489394582563:android:acc97fc557218219dd2d96",
+        "android_client_info": {
+          "package_name": "com.example.forcefest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489394582563-4roouk5ijs3u2667rvbafhbbbblp4nei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcGR4jiV5-YIDiqpEcfY0BLr8bDCeYGhU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489394582563-4roouk5ijs3u2667rvbafhbbbblp4nei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489394582563:android:c909297a1f86f112dd2d96",
+        "android_client_info": {
+          "package_name": "in.aniruddhag.forcefest_appdev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489394582563-4roouk5ijs3u2667rvbafhbbbblp4nei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcGR4jiV5-YIDiqpEcfY0BLr8bDCeYGhU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489394582563-4roouk5ijs3u2667rvbafhbbbblp4nei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
