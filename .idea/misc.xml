@@ -5,6 +5,8 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_alert.xml" value="0.155" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.155" />
+        <entry key="app/src/main/res/drawable/round_bg.xml" value="0.196" />
+        <entry key="app/src/main/res/drawable/round_border.xml" value="0.196" />
         <entry key="app/src/main/res/layout/activity_alert.xml" value="0.24978863189317826" />
         <entry key="app/src/main/res/layout/activity_food.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25725243850975477" />

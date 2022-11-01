@@ -4,26 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#ADD8E6"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/IV_ppcn"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@drawable/app_logo"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:layout_centerInParent="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/logo" />
 
-    <com.jpardogo.android.googleprogressbar.library.GoogleProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:lottie_url="REPLACE_JSON_URL"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/loading"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_below="@id/IV_ppcn"
+        android:elevation="10dp"
         android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        app:type="chrome_floating_circles" />
+        app:lottie_loop="true"/>
 
 </RelativeLayout>
