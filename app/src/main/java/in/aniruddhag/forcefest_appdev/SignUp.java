@@ -27,6 +27,7 @@ public class SignUp extends AppCompatActivity {
     public DatabaseReference databaseReference;
     public FirebaseUser mUser;
     public String Username, Password, Address, AadharNo, PinCode, ContactNo;
+    public static final String FILE_NAME = "localData.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class SignUp extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-        mDatabase = FirebaseDatabase.getInstance("https://forcefest-78f93-default-rtdb.asia-southeast1.firebasedatabase.app");
+        mDatabase = FirebaseDatabase.getInstance("https://forcefest-78f93-default-rtdb.asia-southeast1.firebasedatabase.app/");
         databaseReference = mDatabase.getReference();
 
         txtin_UsID.addTextChangedListener(new TextWatcher() {
@@ -84,7 +85,7 @@ public class SignUp extends AppCompatActivity {
                 String sEditable;
                 sEditable = editable.toString();
                 if (!sEditable.isEmpty()) {
-                    if (sEditable.length() <= 8) {
+                    if (sEditable.length() < 8) {
                         txtin_UsPass.setError("Password should be at least of 8 characters.");
                     }
                 }
@@ -114,6 +115,52 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
+        txtin_UsPinNo.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String sEditable;
+                sEditable = editable.toString();
+                if (!sEditable.isEmpty()) {
+                    if (sEditable.length() != 6) {
+                        txtin_UsPinNo.setError("Pin Code should be of 6 digits.");
+                    }
+                }
+            }
+        });
+
+        txtin_UsCntctN.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String sEditable;
+                sEditable = editable.toString();
+                if (!sEditable.isEmpty()) {
+                    if (sEditable.length() != 10) {
+                        txtin_UsCntctN.setError("Contact Number should be of 10 digits.");
+                    }
+                }
+            }
+        });
+
         btn_SI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,25 +171,21 @@ public class SignUp extends AppCompatActivity {
                 PinCode = txtin_UsPinNo.getText().toString();
                 ContactNo = txtin_UsCntctN.getText().toString();
 
-                SetVal setVal = new SetVal();
-                setVal.setAadharNo(AadharNo);
-                setVal.setAddress(Address);
-                setVal.setContactNo(ContactNo);
-                setVal.setPinCode(PinCode);
-
                 if (Patterns.EMAIL_ADDRESS.matcher(Username).matches()) {
                     mAuth.createUserWithEmailAndPassword(Username, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(SignUp.this, "Successfully Created an Account.", Toast.LENGTH_LONG).show();
                                 mUser = mAuth.getCurrentUser();
                                 DatabaseReference databasereference = databaseReference.child(mUser.getUid());
-                                databasereference.setValue(setVal);
+                                databasereference.child("Address").setValue(Address);
+                                databasereference.child("AadharNo").setValue(AadharNo);
+                                databasereference.child("PinCode").setValue(PinCode);
+                                databasereference.child("ContactNo").setValue(ContactNo);
+
+                                databasereference.child("Food").child("NoOfOrders").setValue(0);
                                 startActivity(new Intent(SignUp.this, LandingPage.class));
-                            } else {
-                                Toast.makeText(SignUp.this, "Couldn't Successfully Create an Account. Error: " + task.getException(), Toast.LENGTH_LONG).show();
-                            }
+                            } else Toast.makeText(SignUp.this, "Couldn't Successfully Create an Account. Error: " + task.getException(), Toast.LENGTH_LONG).show();
 
                         }
                     });
@@ -153,49 +196,8 @@ public class SignUp extends AppCompatActivity {
         });
     }
 
-    public void click(View view) {
+    public void clickSU(View view) {
         Intent intent = new Intent(this, LogIn.class);
         startActivity(intent);
-    }
-    public static class SetVal {
-        public String getAadharNo() {
-            return AadharNo;
-        }
-
-        public void setAadharNo(String aadharNo) {
-            AadharNo = aadharNo;
-        }
-
-        public String getAddress() {
-            return Address;
-        }
-
-        public void setAddress(String address) {
-            Address = address;
-        }
-
-        public String getContactNo() {
-            return ContactNo;
-        }
-
-        public void setContactNo(String contactNo) {
-            ContactNo = contactNo;
-        }
-
-        public String getPinCode() {
-            return PinCode;
-        }
-
-        public void setPinCode(String pinCode) {
-            PinCode = pinCode;
-        }
-
-        private String AadharNo;
-        private String Address;
-        private String ContactNo;
-        private String PinCode;
-        public SetVal() {
-
-        }
     }
 }

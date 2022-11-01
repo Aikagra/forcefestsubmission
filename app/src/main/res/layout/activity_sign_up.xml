@@ -4,85 +4,155 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".SignUp">
 
-    <EditText
-        android:id="@+id/txtin_UsID"
+    <TextView
+        android:id="@+id/header_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/txtin_UsPass"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:hint="User ID"
-        android:inputType="textEmailAddress"
-        android:text="a@o.co" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Sign Up"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="35sp" />
 
-    <EditText
-        android:id="@+id/txtin_UsPass"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crd_txtin_UsID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="25dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_above="@id/txtin_UsAdh"
-        android:hint="User Password"
-        android:inputType="textPassword"
-        android:text="123456789" />
+        android:layout_above="@id/crd_txtin_UsPass">
 
-    <EditText
-        android:id="@+id/txtin_UsAdh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_centerInParent="true"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:hint="User Aadhar Number"
-        android:inputType="number"
-        android:text="12345678901234" />
+        <EditText
+            android:id="@+id/txtin_UsID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User ID"
+            android:inputType="textEmailAddress"
 
-    <EditText
-        android:id="@+id/txtin_UsCntctN"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtin_UsAdh"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:hint="User Address"
-        android:inputType="phone"
-        android:text="1234567890" />
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:background="#CFDFE8"/>
+    </androidx.cardview.widget.CardView>
 
-    <EditText
-        android:id="@+id/txtin_UsLoc"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crd_txtin_UsPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtin_UsCntctN"
+        app:cardCornerRadius="25dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:hint="User Address"
-        android:text="abc"
-        android:inputType="text" />
+        android:layout_above="@id/crd_txtin_UsAdh">
+        <EditText
+            android:id="@+id/txtin_UsPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User Password"
+            android:inputType="textPassword"
 
-    <EditText
-        android:id="@+id/txtin_UsPin"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:background="#CFDFE8"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crd_txtin_UsAdh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtin_UsLoc"
+        app:cardCornerRadius="25dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:hint="User Address"
-        android:text="abc"
-        android:inputType="text" />
+        android:layout_above="@id/crd_txtin_UsCntctN">
+        <EditText
+            android:id="@+id/txtin_UsAdh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User Aadhar Number"
+            android:inputType="number"
+
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:background="#CFDFE8"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crd_txtin_UsCntctN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="25dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_above="@id/crd_txtin_UsLoc">
+        <EditText
+            android:id="@+id/txtin_UsCntctN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User Contact Number"
+            android:inputType="phone"
+
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:background="#CFDFE8"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crd_txtin_UsLoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="25dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_centerInParent="true">
+        <EditText
+            android:id="@+id/txtin_UsLoc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User Address"
+            android:inputType="text"
+
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:background="#CFDFE8"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crd_txtin_UsPin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="25dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@id/crd_txtin_UsLoc">
+
+        <EditText
+            android:id="@+id/txtin_UsPin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User PIN Code"
+            android:inputType="number"
+
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:background="#CFDFE8"/>
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/btn_SI"
@@ -93,7 +163,9 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:text="Sign Up" />
+        android:backgroundTint="#C7CCFB"
+        android:text="Sign Up"
+        android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/btn_ALI"
@@ -105,7 +177,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:background="@android:color/transparent"
-        android:textColor="@color/black"
         android:onClick="clickSU"
-        android:text="Already have an account? LOG IN" />
+        android:text="Already have an account? LOG IN"
+        android:textColor="@color/black" />
 </RelativeLayout>

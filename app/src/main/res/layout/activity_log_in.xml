@@ -4,43 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".LogIn">
 
-    <EditText
-        android:id="@+id/txtin_UsID"
+    <TextView
+        android:id="@+id/header_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Log In"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="35sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crd_txtin_UsID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="25dp"
         android:layout_centerInParent="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:hint="User ID"
-        android:inputType="text"
-        android:minHeight="48dp" />
+        android:layout_marginBottom="5dp">
+        <EditText
+            android:id="@+id/txtin_UsID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User ID"
+            android:inputType="text"
+            android:minHeight="48dp"
 
-    <EditText
-        android:id="@+id/txtin_UsPass"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:background="#CFDFE8"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crd_txtin_UsPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtin_UsID"
+        app:cardCornerRadius="25dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:hint="User Password"
-        android:inputType="textPassword"
-        android:minHeight="48dp" />
+        android:layout_below="@id/crd_txtin_UsID">
+
+        <EditText
+            android:id="@+id/txtin_UsPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User Password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:background="#CFDFE8"/>
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/btn_LI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/btn_ASI"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_above="@id/btn_ASI"
+        android:backgroundTint="#C7CCFB"
+        android:textColor="@android:color/black"
         android:text="Log In" />
 
     <Button

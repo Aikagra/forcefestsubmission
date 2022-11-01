@@ -24,12 +24,14 @@ public class LandingPage extends AppCompatActivity implements BottomNavigationVi
         frameLayout = findViewById(R.id.frmlyut_lndngpg);
 
         bottomNavigationView.setSelectedItemId(R.id.NB_Home);
+        Home home = new Home();
+        frameLayout.addView(home.onCreate(this));
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int iItemId = (Integer) item.getItemId();
+        int iItemId = item.getItemId();
         frameLayout.removeAllViews();
 
         switch (iItemId) {
@@ -49,10 +51,10 @@ public class LandingPage extends AppCompatActivity implements BottomNavigationVi
                 News news = new News();
                 frameLayout.addView(news.onCreate(this));
                 return true;
-            case R.id.NB_Medicine:
-                Medicine medicine = new Medicine();
-                frameLayout.addView(medicine.onCreate(this));
-                return true;
+//            case R.id.NB_Medicine:
+//                Medicine medicine = new Medicine();
+//                frameLayout.addView(medicine.onCreate(this));
+//                return true;
         }
         return false;
     }

@@ -73,7 +73,7 @@ public class LogIn extends AppCompatActivity {
                 String sEditable;
                 sEditable = editable.toString();
                 if (!sEditable.isEmpty()){
-                    if (sEditable.length() != 8) {
+                    if (sEditable.length() < 8) {
                         txtin_UsPass.setError("Password should be at least of 8 characters.");
                     }
                 }

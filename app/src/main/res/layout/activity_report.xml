@@ -4,30 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".Report">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:text="Subject:"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Subject:"
-                android:textColor="@color/black"
-                android:layout_margin="16dp"
-                android:textSize="26sp"
-                android:textStyle="bold"/>
-
-            <EditText
-
-                android:id="@+id/ET_Subject"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:hint="Subject"/>
+                app:cardCornerRadius="25dp"
+                android:layout_margin="10dp">
+                <EditText
+                    android:id="@+id/ET_Subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Subject"
+                    android:background="#CFDFE8"
+                    android:padding="10dp"/>
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -38,14 +43,21 @@
                 android:textSize="26sp"
                 android:textStyle="bold"/>
 
-            <EditText
-                android:id="@+id/ET_Message"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lines="10"
-                android:gravity="start"
-                android:layout_marginHorizontal="16dp"
-                android:hint="Type your message here..."/>
+                app:cardCornerRadius="25dp"
+                android:layout_margin="10dp">
+                <EditText
+                    android:id="@+id/ET_Message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="10"
+                    android:gravity="start"
+                    android:background="#CFDFE8"
+                    android:padding="10dp"
+                    android:hint="Type your message here..."/>
+            </androidx.cardview.widget.CardView>
 
             <Button
                 android:id="@+id/btn_send"
@@ -53,6 +65,8 @@
                 android:layout_height="70dp"
                 android:layout_margin="26dp"
                 android:text="SEND"
+                android:backgroundTint="#C7CCFB"
+                android:textColor="@android:color/black"
                 android:textSize="26sp"/>
 
 
