@@ -12,10 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:text="Home"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textSize="35sp"
         android:textStyle="bold" />
