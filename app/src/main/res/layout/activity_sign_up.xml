@@ -160,16 +160,17 @@
 
     <Button
         android:id="@+id/btn_SI"
-        android:layout_width="0dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/round_bg"
         android:text="@string/login"
+        android:backgroundTint="#009cff"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtin_UsLoc" />

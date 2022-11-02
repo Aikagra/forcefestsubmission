@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#009cff"
     tools:context=".Alert">
 
     <RelativeLayout
@@ -19,24 +20,18 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
+            android:textColor="@color/white"
             android:text="Alerts"
             android:textStyle="bold"
             android:textSize="30sp" />
-        <TextView
-            android:id="@+id/TV_lrts_N"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentRight="true"
-            android:layout_margin="10dp"
-            android:textAlignment="center"
-            android:textSize="22sp"
-            android:background="@drawable/circle"/>
+
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/RL_Item1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:layout_below="@id/RL_Alerts"
         android:layout_margin="10dp">
 
@@ -45,7 +40,10 @@
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_alignParentStart="true"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:src="@drawable/ic_baseline_newspaper_24" />
 
         <LinearLayout
@@ -76,7 +74,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/RL_Item1"
-        android:layout_margin="10dp">
+        android:layout_marginStart="10dp"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp">
 
         <ImageView
             android:id="@+id/IV_itemType2"
@@ -91,21 +93,23 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/IV_itemType2"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/TV_Topic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:text="Food Delivery Info"
                 android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_margin="10dp"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/TV_Description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:text="Your food delivery is on the way."
-                android:textSize="17sp"
-                android:layout_margin="10dp"/>
+                android:textSize="17sp" />
         </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>
