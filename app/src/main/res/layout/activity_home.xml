@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,31 +7,10 @@
     android:background="#009cff"
     tools:context=".Home">
 
-    <RelativeLayout
+    <WebView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/webViewHome"/>
 
-    <TextView
-        android:id="@+id/header_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="Home"
-        android:textColor="@color/white"
-        android:textAlignment="center"
-        android:textSize="35sp"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/IV_header_image"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:layout_below="@id/header_title"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/logo" />
 
     </RelativeLayout>
-</ScrollView>
