@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#009cff"
     tools:context=".Home">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/header_title"
@@ -25,7 +29,9 @@
         android:id="@+id/IV_header_image"
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:layout_marginTop="100dp"
         android:layout_below="@id/header_title"
+        android:layout_marginTop="50dp"
         android:src="@drawable/logo" />
-</RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>
